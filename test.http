@@ -1,8 +1,0 @@
-@url=http://localhost:3000
-
-### 请求员工列表
-get {{url}}/staff-manage/list?page=1&size=5
-# Content-Type: application/json
-acceptlanguage: zh
-authorization: super-admin-token
-
