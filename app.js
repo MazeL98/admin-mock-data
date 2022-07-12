@@ -28,6 +28,21 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
+// 允许跨域
+app.all("*", function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header(
+        "Access-Control-Allow-Methods",
+        "PUT, GET, POST, DELETE, OPTIONS"
+    );
+    // 此处根据前端请求携带的请求头进行配置
+    res.header(
+        "Access-Control-Allow-Headers",
+        "X-Requested-With, Content-Type,authorization"
+    );
+    next();
+});
+
 app.use("/app", appRouter);
 app.use("/sys", sys);
 app.use("/staff-manage", staffManage);
