@@ -9,7 +9,7 @@ let list = [
         openTime: "2019-05-29",
         username: "super-admin",
         mobile: "13267842991",
-        avatar: "https://img.freepik.com/free-vector/portrait-caucasian-woman-profile-with-long-hair-avatar-young-white-girl_102172-419.jpg",
+        avatar: "http://rfsjnlrct.hn-bkt.clouddn.com/super-admin.png",
     },
     {
         role: { 2: "Admin" },
@@ -18,7 +18,7 @@ let list = [
         openTime: "2021-05-05",
         username: "admin",
         mobile: "13195426971",
-        avatar: "https://img.freepik.com/free-vector/portrait-strong-beautiful-woman-profile-with-blond-hair_102172-425.jpg",
+        avatar: "http://rfsjnlrct.hn-bkt.clouddn.com/admin.png",
     },
     {
         role: { 3: "Staff" },
@@ -27,7 +27,7 @@ let list = [
         openTime: "2022-03-14",
         username: "test",
         mobile: "15965248169",
-        avatar: "https://img.freepik.com/free-vector/portrait-african-american-woman-profile-avatar-young-black-girl_102172-418.jpg",
+        avatar: "http://rfsjnlrct.hn-bkt.clouddn.com/test.png",
     },
 ];
 let zhList = [
@@ -38,7 +38,7 @@ let zhList = [
         openTime: "2019-05-29",
         username: "super-admin",
         mobile: "13267842991",
-        avatar: "https://img.freepik.com/free-vector/portrait-caucasian-woman-profile-with-long-hair-avatar-young-white-girl_102172-419.jpg",
+        avatar: "http://rfsjnlrct.hn-bkt.clouddn.com/super-admin.png",
     },
     {
         role: { 2: "管理员" },
@@ -47,7 +47,7 @@ let zhList = [
         openTime: "2021-05-05",
         username: "admin",
         mobile: "13195426971",
-        avatar: "https://img.freepik.com/free-vector/portrait-strong-beautiful-woman-profile-with-blond-hair_102172-425.jpg",
+        avatar: "http://rfsjnlrct.hn-bkt.clouddn.com/admin.png",
     },
     {
         role: { 3: "员工" },
@@ -56,7 +56,7 @@ let zhList = [
         openTime: "2022-03-14",
         username: "test",
         mobile: "15965248169",
-        avatar: "https://img.freepik.com/free-vector/portrait-african-american-woman-profile-avatar-young-black-girl_102172-418.jpg",
+        avatar: "http://rfsjnlrct.hn-bkt.clouddn.com/test.png",
     },
 ];
 let pageList = [];
@@ -105,8 +105,6 @@ module.exports = {
     getStaffList: (req) => {
         const lang = req.get("acceptlanguage");
         const { page, size } = param2Obj(req.originalUrl);
-        console.log(req.originalUrl);
-        // console.log(page);
         if (lang === "zh") {
             pageList = zhList.filter(
                 (item, index) =>
