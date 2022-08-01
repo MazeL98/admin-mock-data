@@ -1,103 +1,139 @@
 const Mock = require("mockjs");
 const dayjs = require("dayjs");
 const { param2Obj, parseFloat2Two } = require("./utils");
+const schedule = require("node-schedule");
 
 // 90天每日营收数据
+
 const list = [];
 let count = 90;
 let i = 0;
-const today = dayjs();
-for (i; i < count; i++) {
-    list.push(
-        Mock.mock({
-            date: today.subtract(i, "day").format("YYYY-MM-DD").toString(),
-            timePointData: [
-                {
-                    timeStr: "0点",
-                    "income|2-10.2": 1,
-                    "expense|2-10.2": 1,
-                    balance: function () {
-                        return parseFloat2Two(this.income - this.expense);
+const generateList = () => {
+    schedule.scheduleJob("0 20 2 * * *", () => {
+        const today = dayjs();
+        for (i; i < count; i++) {
+            list.push(
+                Mock.mock({
+                    date: today
+                        .subtract(i, "day")
+                        .format("YYYY-MM-DD")
+                        .toString(),
+                    timePointData: [
+                        {
+                            timeStr: "0点",
+                            "income|2-10.2": 1,
+                            "expense|2-10.2": 1,
+                            balance: function () {
+                                return parseFloat2Two(
+                                    this.income - this.expense
+                                );
+                            },
+                        },
+                        {
+                            timeStr: "3点",
+                            "income|2-10.2": 1,
+                            "expense|2-10.2": 1,
+                            balance: function () {
+                                return parseFloat2Two(
+                                    this.income - this.expense
+                                );
+                            },
+                        },
+                        {
+                            timeStr: "6点",
+                            "income|2-10.2": 1,
+                            "expense|2-10.2": 1,
+                            balance: function () {
+                                return parseFloat2Two(
+                                    this.income - this.expense
+                                );
+                            },
+                        },
+                        {
+                            timeStr: "9点",
+                            "income|2-15.2": 1,
+                            "expense|2-10.2": 1,
+                            balance: function () {
+                                return parseFloat2Two(
+                                    this.income - this.expense
+                                );
+                            },
+                        },
+                        {
+                            timeStr: "12点",
+                            "income|2-15.2": 1,
+                            "expense|2-10.2": 1,
+                            balance: function () {
+                                return parseFloat2Two(
+                                    this.income - this.expense
+                                );
+                            },
+                        },
+                        {
+                            timeStr: "15点",
+                            "income|2-15.2": 1,
+                            "expense|2-10.2": 1,
+                            balance: function () {
+                                return parseFloat2Two(
+                                    this.income - this.expense
+                                );
+                            },
+                        },
+                        {
+                            timeStr: "18点",
+                            "income|2-15.2": 1,
+                            "expense|2-10.2": 1,
+                            balance: function () {
+                                return parseFloat2Two(
+                                    this.income - this.expense
+                                );
+                            },
+                        },
+                        {
+                            timeStr: "21点",
+                            "income|2-10.2": 1,
+                            "expense|2-15.2": 1,
+                            balance: function () {
+                                return parseFloat2Two(
+                                    this.income - this.expense
+                                );
+                            },
+                        },
+                    ],
+                    totalIncome: function () {
+                        const res = this.timePointData.reduce(
+                            (total, currentV) => {
+                                return total + currentV.income;
+                            },
+                            0
+                        );
+                        return parseFloat2Two(res);
                     },
-                },
-                {
-                    timeStr: "3点",
-                    "income|2-10.2": 1,
-                    "expense|2-10.2": 1,
-                    balance: function () {
-                        return parseFloat2Two(this.income - this.expense);
+                    totalExpense: function () {
+                        const res = this.timePointData.reduce(
+                            (total, currentV) => {
+                                return total + currentV.expense;
+                            },
+                            0
+                        );
+                        return parseFloat2Two(res);
                     },
-                },
-                {
-                    timeStr: "6点",
-                    "income|2-10.2": 1,
-                    "expense|2-10.2": 1,
-                    balance: function () {
-                        return parseFloat2Two(this.income - this.expense);
+                    totalBalance: function () {
+                        const res = this.timePointData.reduce(
+                            (total, currentV) => {
+                                return total + currentV.balance;
+                            },
+                            0
+                        );
+                        return parseFloat2Two(res);
                     },
-                },
-                {
-                    timeStr: "9点",
-                    "income|2-15.2": 1,
-                    "expense|2-10.2": 1,
-                    balance: function () {
-                        return parseFloat2Two(this.income - this.expense);
-                    },
-                },
-                {
-                    timeStr: "12点",
-                    "income|2-15.2": 1,
-                    "expense|2-10.2": 1,
-                    balance: function () {
-                        return parseFloat2Two(this.income - this.expense);
-                    },
-                },
-                {
-                    timeStr: "15点",
-                    "income|2-15.2": 1,
-                    "expense|2-10.2": 1,
-                    balance: function () {
-                        return parseFloat2Two(this.income - this.expense);
-                    },
-                },
-                {
-                    timeStr: "18点",
-                    "income|2-15.2": 1,
-                    "expense|2-10.2": 1,
-                    balance: function () {
-                        return parseFloat2Two(this.income - this.expense);
-                    },
-                },
-                {
-                    timeStr: "21点",
-                    "income|2-10.2": 1,
-                    "expense|2-15.2": 1,
-                    balance: function () {
-                        return parseFloat2Two(this.income - this.expense);
-                    },
-                },
-            ],
-            totalIncome: function () {
-                const res = this.timePointData.reduce((total, currentV) => {
-                    return total + currentV.income;
-                }, 0);
-                return parseFloat2Two(res);
-            },
-            totalExpense: function () {
-                const res = this.timePointData.reduce((total, currentV) => {
-                    return total + currentV.expense;
-                }, 0);
-                return parseFloat2Two(res);
-            },
-            totalBalance: function () {
-                const res = this.timePointData.reduce((total, currentV) => {
-                    return total + currentV.balance;
-                }, 0);
-                return parseFloat2Two(res);
-            },
-        })
-    );
-}
+                })
+            );
+        }
+    });
+};
+generateList();
+
 module.exports = {
     // 返回 数据总览（ 今日数据+累计月收益）
     getOverview: (req) => {
@@ -105,7 +141,6 @@ module.exports = {
         if (date) {
             const reqItem = list.find((item) => item.date === date);
             const reqIndex = list.indexOf(reqItem);
-            console.log(reqIndex);
             const monthList = list.slice(reqIndex, reqIndex + 30);
             const monthlyData = monthList.reduce((total, currentV) => {
                 return total + currentV.totalBalance;
