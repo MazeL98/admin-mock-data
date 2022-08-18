@@ -1,14 +1,14 @@
-const express = require("express");
-
-const router = express.Router();
-const {
+import express from "express";
+import {
     getAllArticleList,
     sortArticle,
     deleteArticle,
     getArticleDetail,
     createArticle,
     editArticle,
-} = require("../db/article");
+} from "../article.js";
+
+const router = express.Router();
 
 // 获取所有文章
 router.get("/list", (req, res) => {
@@ -40,4 +40,4 @@ router.post("/edit", (req, res) => {
     res.json(editArticle(req));
 });
 
-module.exports = router;
+export default router;

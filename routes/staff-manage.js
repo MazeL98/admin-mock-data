@@ -1,8 +1,6 @@
-const express = require("express");
-const Mock = require("mockjs");
-const router = express.Router();
-
-const {
+import express from "express";
+import Mock from "mockjs";
+import {
     getStaffList,
     addStaff,
     deleteStaff,
@@ -10,7 +8,9 @@ const {
     getStaffInfo,
     getStaffRoles,
     updateRoles,
-} = require("../db/staff-manage");
+} from "../staff-manage.js";
+
+const router = express.Router();
 
 // 根据page&size参数返回相应员工列表
 router.get("/list", (req, res) => {
@@ -47,4 +47,4 @@ router.post("/update-role/:id", (req, res) => {
     res.json(updateRoles(req));
 });
 
-module.exports = router;
+export default router;

@@ -1,8 +1,8 @@
-const express = require("express");
+import express from "express";
+import { login, getUserProfile } from "../sys.js";
 
 const router = express.Router();
 
-const { login, getUserProfile } = require("../db/sys");
 // 首次登录获取token
 router.post("/login", (req, res) => {
     res.json(login(req));
@@ -13,4 +13,4 @@ router.get("/profile", (req, res) => {
     res.json(getUserProfile(req));
 });
 
-module.exports = router;
+export default router;

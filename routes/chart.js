@@ -1,12 +1,12 @@
-const express = require("express");
-
-const router = express.Router();
-const {
+import express from "express";
+import {
     getOverview,
     getCalendarData,
     getTimePointData,
     getTrend,
-} = require("../db/chart");
+} from "../chart.js";
+
+const router = express.Router();
 
 router.get("/overview", (req, res) => {
     res.json(getOverview(req));
@@ -24,4 +24,4 @@ router.get("/trend", (req, res) => {
     res.json(getTrend(req));
 });
 
-module.exports = router;
+export default router;

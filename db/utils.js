@@ -1,4 +1,5 @@
-// 所有会复用的模拟数据的方法
+// 所有会复用的处理Mock数据的方法
+
 function param2Obj(url) {
     const params = url.split("?")[1];
     if (!params) {
@@ -31,6 +32,16 @@ function parseFloat2Two(num) {
     return num;
 }
 
-module.exports.param2Obj = param2Obj;
-module.exports.sliceId = sliceId;
-module.exports.parseFloat2Two = parseFloat2Two;
+// 处理 permissionList
+function generatePermission(list, newList) {
+    list.forEach((item) => {
+        const { id, permissionMark } = item;
+        const newItem = { id, permissionMark };
+        newList.push(newItem);
+        if (item.children && item.children.length > 0) {
+            generatePermission(item.children, newList);
+        }
+    });
+}
+
+export { param2Obj, sliceId, parseFloat2Two, generatePermission };
