@@ -5,7 +5,7 @@
     "type": "module",
     "scripts": {
         "start": "babel-node  --experimental-modules --es-module-specifier-resolution=node ./bin/www.js",
-        "dev": "nodemon --experimental-modules --es-module-specifier-resolution=node  --exec babel-node  ./bin/www.js"
+        "dev": "nodemon --input-type=module ./bin/www.js"
     },
     "dependencies": {
         "cookie-parser": "~1.4.4",
