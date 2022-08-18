@@ -1,7 +1,7 @@
 import Mock from "mockjs";
 const Random = Mock.Random;
-import { param2Obj, sliceId } from "./utils.js";
-import { zhRoleList, enRoleList } from "./role.js";
+import { param2Obj, sliceId } from "./utils.mjs";
+import { zhRoleList, enRoleList } from "./role.mjs";
 
 let list = [
     {

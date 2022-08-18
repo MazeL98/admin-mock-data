@@ -1,6 +1,6 @@
-import { permissionListZh } from "./permission.js";
-import { users } from "./sys.js";
-import { sliceId, generatePermission } from "./utils.js";
+import { permissionListZh } from "./permission.mjs";
+import { users } from "./sys.mjs";
+import { sliceId, generatePermission } from "./utils.mjs";
 
 const zhRoleList = [
     {

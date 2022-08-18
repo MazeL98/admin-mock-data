@@ -3,29 +3,26 @@ import bodyParser from "body-parser";
 
 // const path = require("path");
 // const cookieParser = require("cookie-parser");
+const app = express();
 
 // 引入各模块的路由
-import sys from "./routes/sys.js";
 import staffManage from "./routes/staff-manage.js";
+import sys from "./routes/sys.js";
 import permission from "./routes/permission.js";
 import role from "./routes/role.js";
 import article from "./routes/article.js";
 import chart from "./routes/chart.js";
-
-// 初始化默认
-
-const app = express();
 
 // view engine setup
 // app.set("views", path.join(__dirname, "views"));
 // app.set("view engine", "jade");
 
 app.use(bodyParser.json());
-app.use(logger("dev"));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "public")));
+// app.use(logger("dev"));
+// app.use(express.json());
+// app.use(express.urlencoded({ extended: false }));
+// app.use(cookieParser());
+// app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/sys", sys);
 app.use("/staff-manage", staffManage);

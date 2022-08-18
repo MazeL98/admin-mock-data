@@ -4,8 +4,8 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "start": "node  --experimental-modules --es-module-specifier-resolution=node ./bin/www",
-        "dev": "nodemon  --experimental-modules --es-module-specifier-resolution=node  ./bin/www"
+        "start": "babel-node  --experimental-modules --es-module-specifier-resolution=node ./bin/www.js",
+        "dev": "nodemon --experimental-modules --es-module-specifier-resolution=node  --exec babel-node  ./bin/www.js"
     },
     "dependencies": {
         "cookie-parser": "~1.4.4",
@@ -21,7 +21,7 @@
     },
     "devDependencies": {
         "@babel/core": "^7.18.10",
-        "@babel/preset-env": "^7.18.10",
-        "@babel/register": "^7.18.9"
+        "@babel/node": "^7.18.10",
+        "@babel/preset-env": "^7.18.10"
     }
 }

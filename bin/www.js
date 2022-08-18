@@ -4,7 +4,8 @@
  * Module dependencies.
  */
 import app from "../app.js";
-var debug = require("debug")("mock-data:server");
+import debug from "debug";
+var Debug = debug("mock-data:server");
 import http from "http";
 
 /**
@@ -81,5 +82,5 @@ function onError(error) {
 function onListening() {
     var addr = server.address();
     var bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
-    debug("Listening on " + bind);
+    Debug("Listening on " + bind);
 }
