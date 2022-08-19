@@ -1,6 +1,6 @@
-import { permissionListZh } from "./permission.mjs";
-import { users } from "./sys.mjs";
-import { sliceId, generatePermission } from "./utils.mjs";
+import { permissionListZh } from "./permission";
+import { users } from "./sys";
+import { sliceId, generatePermission } from "./utils";
 
 const zhRoleList = [
     {
@@ -67,6 +67,7 @@ const enRoleList = [
         describe: "General staff",
     },
 ];
+
 function getRoleList(req) {
     const lang = req.get("acceptlanguage");
     if (lang === "zh") {

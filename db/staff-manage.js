@@ -1,7 +1,7 @@
 import Mock from "mockjs";
 const Random = Mock.Random;
-import { param2Obj, sliceId } from "./utils.mjs";
-import { zhRoleList, enRoleList } from "./role.mjs";
+import { param2Obj, sliceId } from "./utils";
+import { zhRoleList, enRoleList } from "./role";
 
 let list = [
     {
@@ -252,7 +252,7 @@ function getStaffInfo(req) {
         return {
             success: true,
             code: 200,
-            data: { ...staffInfo, ...newInfo },
+            data: { staffInfo, newInfo },
             message: "获取成功",
         };
     } else if (lang === "en") {
@@ -284,7 +284,7 @@ function getStaffInfo(req) {
         return {
             success: true,
             code: 200,
-            data: { ...staffInfo, ...newInfo },
+            data: { staffInfo, newInfo },
             message: "success!",
         };
     } else {

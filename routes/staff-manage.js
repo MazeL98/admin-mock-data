@@ -8,7 +8,7 @@ import {
     getStaffInfo,
     getStaffRoles,
     updateRoles,
-} from "../staff-manage.js";
+} from "../db/staff-manage";
 
 const router = express.Router();
 

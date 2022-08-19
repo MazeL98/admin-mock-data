@@ -4,7 +4,7 @@ import {
     getCalendarData,
     getTimePointData,
     getTrend,
-} from "../chart.js";
+} from "../db/chart";
 
 const router = express.Router();
 

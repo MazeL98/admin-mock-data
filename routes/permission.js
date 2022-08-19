@@ -1,5 +1,5 @@
 import express from "express";
-import { getAllPermission } from "../permission.js";
+import { getAllPermission } from "../db/permission";
 
 const router = express.Router();
 

@@ -2,15 +2,17 @@
     "name": "mock-data",
     "version": "0.0.0",
     "private": true,
-    "type": "module",
     "scripts": {
-        "start": "babel-node  --experimental-modules --es-module-specifier-resolution=node ./bin/www.js",
-        "dev": "nodemon --input-type=module ./bin/www.js"
+        "start": "node  ./bin/www",
+        "dev": "nodemon --exec babel-node ./bin/www"
     },
     "dependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-preset-env": "^1.7.0",
         "cookie-parser": "~1.4.4",
         "dayjs": "^1.11.4",
         "debug": "~2.6.9",
+        "esm": "^3.2.25",
         "express": "~4.16.1",
         "http-errors": "~1.6.3",
         "jade": "~1.11.0",
