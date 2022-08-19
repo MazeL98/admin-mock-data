@@ -6,15 +6,15 @@ import cookieParser from "cookie-parser";
 import logger from "morgan";
 
 const app = express();
-
+const __dirname = path.resolve();
 // 引入各模块的路由
-import permission from "./routes/permission";
-import staffManage from "./routes/staff-manage";
-import sys from "./routes/sys";
+import permission from "./routes/permission.js";
+import staffManage from "./routes/staff-manage.js";
+import sys from "./routes/sys.js";
 
-import role from "./routes/role";
-import article from "./routes/article";
-import chart from "./routes/chart";
+import role from "./routes/role.js";
+import article from "./routes/article.js";
+import chart from "./routes/chart.js";
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));

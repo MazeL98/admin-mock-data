@@ -1,5 +1,9 @@
 import express from "express";
-import { getRoleList, getPermission, distributePermission } from "../db/role";
+import {
+    getRoleList,
+    getPermission,
+    distributePermission,
+} from "../db/role.js";
 
 const router = express.Router();
 

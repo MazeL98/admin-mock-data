@@ -1,6 +1,6 @@
 import Mock from "mockjs";
 import dayjs from "dayjs";
-import { param2Obj, parseFloat2Two } from "./utils";
+import { param2Obj, parseFloat2Two } from "./utils.js";
 import schedule from "node-schedule";
 
 // 90天每日营收数据

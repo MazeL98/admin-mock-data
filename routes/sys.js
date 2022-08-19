@@ -1,5 +1,5 @@
 import express from "express";
-import { login, getUserProfile } from "../db/sys";
+import { login, getUserProfile } from "../db/sys.js";
 
 const router = express.Router();
 

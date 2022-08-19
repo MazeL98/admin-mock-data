@@ -6,7 +6,7 @@ import {
     getArticleDetail,
     createArticle,
     editArticle,
-} from "../db/article";
+} from "../db/article.js";
 
 const router = express.Router();
 

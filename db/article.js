@@ -1,5 +1,5 @@
 import Mock from "mockjs";
-import { param2Obj, sliceId } from "./utils";
+import { param2Obj, sliceId } from "./utils.js";
 
 let list = [];
 let count = 8;
