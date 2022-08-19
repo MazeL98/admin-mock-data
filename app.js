@@ -11,7 +11,6 @@ const __dirname = path.resolve();
 import permission from "./routes/permission.js";
 import staffManage from "./routes/staff-manage.js";
 import sys from "./routes/sys.js";
-
 import role from "./routes/role.js";
 import article from "./routes/article.js";
 import chart from "./routes/chart.js";

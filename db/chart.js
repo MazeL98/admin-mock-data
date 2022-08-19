@@ -104,9 +104,10 @@ for (i; i < count; i++) {
 
 // 每日00：02更新日期并重新生成数据列表
 const generateList = () => {
-    schedule.scheduleJob("0 2 0 * * *", () => {
+    schedule.scheduleJob("0 1 0 * * *", () => {
         today = dayjs();
         list = [];
+        i = 0;
         for (i; i < count; i++) {
             list.push(
                 Mock.mock({
