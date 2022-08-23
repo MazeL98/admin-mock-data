@@ -11,7 +11,7 @@ let list = [
         openTime: "2019-05-29",
         username: "super-admin",
         mobile: "13267842991",
-        avatar: "http://rfsjnlrct.hn-bkt.clouddn.com/super-admin.png",
+        avatar: "http://qiniuyun.mazel98.com/super-admin.png",
     },
     {
         role: { 2: "Admin" },
@@ -20,7 +20,7 @@ let list = [
         openTime: "2021-05-05",
         username: "admin",
         mobile: "13195426971",
-        avatar: "http://rfsjnlrct.hn-bkt.clouddn.com/admin.png",
+        avatar: "http://qiniuyun.mazel98.com/admin.png",
     },
     {
         role: { 6: "Staff" },
@@ -29,7 +29,7 @@ let list = [
         openTime: "2022-03-14",
         username: "test",
         mobile: "15965248169",
-        avatar: "http://rfsjnlrct.hn-bkt.clouddn.com/test.png",
+        avatar: "http://qiniuyun.mazel98.com/test.png",
     },
 ];
 let zhList = [
@@ -40,7 +40,7 @@ let zhList = [
         openTime: "2019-05-29",
         username: "super-admin",
         mobile: "13267842991",
-        avatar: "http://rfsjnlrct.hn-bkt.clouddn.com/super-admin.png",
+        avatar: "http://qiniuyun.mazel98.com/super-admin.png",
     },
     {
         role: { 2: "管理员" },
@@ -49,7 +49,7 @@ let zhList = [
         openTime: "2021-05-05",
         username: "admin",
         mobile: "13195426971",
-        avatar: "http://rfsjnlrct.hn-bkt.clouddn.com/admin.png",
+        avatar: "http://qiniuyun.mazel98.com/admin.png",
     },
     {
         role: { 6: "员工" },
@@ -58,7 +58,7 @@ let zhList = [
         openTime: "2022-03-14",
         username: "test",
         mobile: "15965248169",
-        avatar: "http://rfsjnlrct.hn-bkt.clouddn.com/test.png",
+        avatar: "http://qiniuyun.mazel98.com/test.png",
     },
 ];
 let pageList = [];
@@ -80,7 +80,7 @@ for (i; i < count; i++) {
             openTime: "@date()",
             username: "@first()",
             mobile: /^1[3-9]\d{9}$/,
-            avatar: "http://rfsjnlrct.hn-bkt.clouddn.com/avatar.png",
+            avatar: "http://qiniuyun.mazel98.com/avatar.png",
         })
     );
     zhList.push(
@@ -98,7 +98,7 @@ for (i; i < count; i++) {
             openTime: "@date()",
             username: "@first()",
             mobile: /^1[3-9]\d{9}$/,
-            avatar: "http://rfsjnlrct.hn-bkt.clouddn.com/avatar.png",
+            avatar: "http://qiniuyun.mazel98.com/avatar.png",
         })
     );
 }

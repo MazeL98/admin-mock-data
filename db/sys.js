@@ -158,7 +158,7 @@ let users = {
         id: "1",
         username: "super-admin",
         title: "超级管理员",
-        avatar: "http://rfsjnlrct.hn-bkt.clouddn.com/super-admin.png",
+        avatar: "http://qiniuyun.mazel98.com/super-admin.png",
         permission: {
             menus: [
                 "StaffManage",
@@ -187,7 +187,7 @@ let users = {
         id: "2",
         username: "admin",
         title: "管理员",
-        avatar: "http://rfsjnlrct.hn-bkt.clouddn.com/admin.png",
+        avatar: "http://qiniuyun.mazel98.com/admin.png",
         permission: {
             menus: [
                 "StaffManage",
@@ -211,7 +211,7 @@ let users = {
         id: "6",
         username: "test",
         title: "员工",
-        avatar: "http://rfsjnlrct.hn-bkt.clouddn.com/test.png",
+        avatar: "http://qiniuyun.mazel98.com/test.png",
         permission: {
             menus: ["ArticleRanking", "ArticleCreate"],
         },
